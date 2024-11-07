@@ -66,6 +66,18 @@
         border-color: #138496;
       }
 
+      .password-container {
+        position: relative;
+      }
+
+      .mostrar-senha {
+        cursor: pointer;
+        color: #e0e0e0;
+        position: absolute;
+        right: 10px;
+        top: 35px;
+      }
+
       @media (max-width: 768px) {
         .container {
           padding: 20px;
@@ -123,7 +135,7 @@
             required
           />
         </div>
-        <div class="form-group mb-3">
+        <div class="form-group mb-3 password-container">
           <label for="password">Senha</label>
           <input
             placeholder="Digite a senha"
@@ -133,8 +145,12 @@
             name="senha"
             required
           />
+          <span
+            class="mostrar-senha"
+            onclick="togglePasswordVisibility('senha', this)"
+            >👁️</span>
         </div>
-        <div class="form-group mb-3">
+        <div class="form-group mb-3 password-container">
           <label for="confirm_password">Confirmar Senha</label>
           <input
             placeholder="Confirme a senha"
@@ -144,6 +160,10 @@
             name="confirm_senha"
             required
           />
+          <span
+            class="mostrar-senha"
+            onclick="togglePasswordVisibility('confirm_senha', this)"
+            >👁️</span>
         </div>
         <div class="form-group mb-3">
           <label for="" class="mb-2">Papel</label>
@@ -155,9 +175,9 @@
           >
             <option value="1" selected>Usuário</option>
             <option value="2">Administrador</option>
-            <option value="3">Senior</option>
-            <option value="4">Junior</option>
-            <option value="5">Estagiario</option>
+            <option value="3">Sênior</option>
+            <option value="4">Júnior</option>
+            <option value="5">Estagiário</option>
           </select>
         </div>
         <div class="form-group mb-3 form-check">
@@ -175,5 +195,18 @@
 
     <!-- Bootstrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function togglePasswordVisibility(fieldId, iconElement) {
+        const field = document.getElementById(fieldId);
+        if (field.type === 'password') {
+          field.type = 'text';
+          iconElement.textContent = '🙈'; // Ícone para esconder a senha
+        } else {
+          field.type = 'password';
+          iconElement.textContent = '👁️'; // Ícone para mostrar a senha
+        }
+      }
+    </script>
   </body>
 </html>
