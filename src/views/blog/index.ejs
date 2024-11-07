@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>Blog Unicesumar - Últimos Posts</title>
+    <style>
+      body {
+        background-color: #1c1c1c;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        background-color: #2c2c2c;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .card {
+        background-color: #2b2b2b;
+        border: 1px solid #444;
+        color: #e0e0e0;
+        width: 100%;
+      }
+
+      .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .card-text {
+        font-size: 1rem;
+      }
+
+      .card-img-top {
+        width: 410px;
+        height: 202px;
+      }
+
+      .btn-outline-info {
+        color: #17a2b8;
+        border-color: #17a2b8;
+      }
+
+      .btn-outline-info:hover {
+        background-color: #17a2b8;
+        color: #fff;
+      }
+
+      .logout-btn {
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+      }
+      .blog-btn {
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .card {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .card-title {
+          font-size: 1.2rem;
+        }
+
+        .card-text {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        .card-title {
+          font-size: 1rem;
+        }
+
+        .card-text {
+          font-size: 0.8rem;
+        }
+
+        .btn-outline-info {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Últimos Posts do Blog</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/post1.png" class="card-img-top" alt="Imagem 1" />
+            <div class="card-body">
+              <h5 class="card-title">
+                Transforme seu Dia: Aprenda a Organizar sua Rotina em Sessões
+              </h5>
+              <a href="../blog/posts/post1.ejs" class="btn btn-outline-info"
+                >Leia mais</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/post2.png" class="card-img-top" alt="Imagem 2" />
+            <div class="card-body">
+              <h5 class="card-title">
+                Cozinhando com Sabor: 10 Dicas para Receitas Irresistíveis
+              </h5>
+              <a href="../blog/posts/post2.ejs" class="btn btn-outline-info"
+                >Leia mais</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/post3.png" class="card-img-top" alt="Imagem 3" />
+            <div class="card-body">
+              <h5 class="card-title">
+                Desperte seu Potencial: Como Iniciar uma Vida Fitness Hoje
+              </h5>
+              <a href="../blog/posts/post3.ejs" class="btn btn-outline-info"
+                >Leia mais</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/post4.png" class="card-img-top" alt="Imagem 4" />
+            <div class="card-body">
+              <h5 class="card-title">
+                Empreender com Sucesso: Compreendendo os Riscos e Oportunidades
+              </h5>
+              <a href="../blog/posts/post4.ejs" class="btn btn-outline-info"
+                >Leia mais</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/post5.png" class="card-img-top" alt="Imagem 5" />
+            <div class="card-body">
+              <h5 class="card-title">
+                O Futuro é Agora: Como a Inteligência Artificial Está Dominando
+                o Mundo
+              </h5>
+              <a href="../blog/posts/post5.ejs" class="btn btn-outline-info"
+                >Leia mais</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <a href="/users" class="btn btn-primary blog-btn"
+          >Ir para a Lista de Usuários</a
+        >
+        <a href="/logout" class="btn btn-danger logout-btn">Logout</a>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #1c1c1c;
+        color: #e0e0e0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input::placeholder {
+        opacity: 0.5;
+        color: #999797 !important;
+      }
+
+      .container {
+        max-width: 400px;
+        background-color: #2c2c2c;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      label {
+        margin-bottom: 8px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        background-color: #17a2b8;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #138496;
+      }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #e0e0e0;
+      }
+
+      .error {
+        color: #dc3545;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        margin-top: 10px;
+      }
+
+      .btn-secondary:hover {
+        background-color: #5a6268;
+      }
+
+      .password-container {
+        position: relative;
+      }
+
+      .mostrar-senha {
+        cursor: pointer;
+        color: #e0e0e0;
+        position: absolute;
+        right: 10px;
+        top: 35px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-4">Login</h1>
+
+      <% if (typeof errorMessage !== 'undefined') { %>
+      <div class="error"><%= errorMessage %></div>
+      <% } %>
+
+      <form action="/login/search" method="post">
+        <div class="form-group mb-3">
+          <label for="email">Email</label>
+          <input
+            placeholder="Digite o email"
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="form-group mb-4 password-container">
+          <label for="senha">Senha</label>
+          <input
+            placeholder="Digite a senha"
+            type="password"
+            class="form-control"
+            id="senha"
+            name="senha"
+            required
+          />
+          <span
+            class="mostrar-senha"
+            onclick="togglePasswordVisibility('senha', this)"
+            >👁️</span>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+      </form>
+
+      <a href="/users/add" class="btn btn-secondary w-100"
+        >Não tem uma conta? Cadastre-se</a
+      >
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ajv2WmFm7MJsmu4NfTKd2Y5aNz/fW7XkP3J5ycvZPqrGKf2f7fTb6Q7MMVyvH6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function togglePasswordVisibility(fieldId, iconElement) {
+        const field = document.getElementById(fieldId);
+        if (field.type === 'password') {
+          field.type = 'text';
+          iconElement.textContent = '🙈'; // Ícone para esconder a senha
+        } else {
+          field.type = 'password';
+          iconElement.textContent = '👁️'; // Ícone para mostrar a senha
+        }
+      }
+    </script>
+  </body>
+</html>
